@@ -1,0 +1,26 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ull long long
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+      ull m,n;
+      cin>>m;
+      n=m;
+      ull ctr=0,ans=0;
+      while(m>0)
+      {
+        m/=10;
+        if(m>0)
+        {
+            ctr++;
+        }
+      }
+   
+    ans =n-pow(10,ctr);
+         cout<<ans<<endl;
+    }
+}
