@@ -1,0 +1,29 @@
+#include<bits/stdc++.h> 
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string a;
+        cin>>a;
+      int   ans=1;
+        // sudu distinct set a insert hobe 
+        set<char>ss;
+        for(int i=0;i<a.size();i++)
+        {
+            ss.insert(a[i]);
+            if(ss.size()>3)
+            {
+                ans++;
+                ss.clear();
+                ss.insert(a[i]);
+            }
+            
+        }
+        cout<<ans<<endl;
+       
+
+    }
+}
