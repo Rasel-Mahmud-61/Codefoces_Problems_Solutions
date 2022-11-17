@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int main()
+{
+  int t;
+  cin>>t;
+  while(t--)
+  {
+    ll n ;
+    cin>>n;
+   ll ans =(n/2);
+    if(ans*2<n) ans++;
+    cout<<ans<<endl;
+  }
+ 
+}
