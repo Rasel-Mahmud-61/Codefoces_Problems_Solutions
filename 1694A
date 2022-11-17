@@ -1,0 +1,55 @@
+#include<bits/stdc++.h> 
+using namespace std;
+int main()
+{
+    int te;
+    cin>>te;
+    while(te--)
+    {
+        int a,b;
+        cin>>a>>b;
+        int t=a;
+        int p=b;
+
+         if(a>b)
+        {
+            while(t>0)
+            {
+
+                cout<<"0";
+                t--;
+                if(p>0)
+                {
+                    cout<<"1";
+                    p--;
+                }
+            }
+        }
+        
+        else if(b>a)
+        {
+            while(p>0)
+            {
+
+                cout<<"1";
+                p--;
+               
+                if(t>0)
+                {
+                     cout<<"0";
+                    t--;
+                }
+            }
+        }
+        else{
+            while(a>0 &&  b>0)
+            {
+                cout<<"0";
+                a--;
+                cout<<"1";
+                b--;
+            }
+        }
+        cout<<endl;
+    }
+}
