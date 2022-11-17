@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+         vector<pair<int,int> > vec;
+
+        int  l=2,r=3*n;
+        int ctr=0;
+        while(l<r)
+        {
+            ctr++;
+            vec.push_back(make_pair(l,r));
+
+
+            l=l+3;
+            r=r-3;
+
+        }
+        cout<<ctr<<endl;
+        for(auto it: vec)
+        {
+            cout<<it.first<<" "<<it.second<<endl;
+
+        }
+
+    }
+}
