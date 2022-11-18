@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string str;
+    cin>>str;
+    int f=0;
+     string s;
+     for(int i=0;i<=20;i++)
+     {
+        s+="Yes";
+        
+
+     }
+    // cout<<s.size();
+   //cout<<s<<endl;
+     for(int i=0;i<s.size()-1;i++)
+     {
+        for(int len=1;len<=s.size()-i;len++)
+        {
+          string c=  s.substr(i,len);
+            if(c==str)
+            {
+                f=1;
+                break;
+            }
+        }
+     }
+       if(f==1) cout<<"YES"<<endl;
+       else cout<<"NO"<<endl;
+    }
+}
