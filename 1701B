@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        // tack ralkhar  jnne
+        vector<bool>a(n+1,false);
+        int d=2;
+        cout<<d<<endl;
+       for(int i=1;i<=n;i+=2)
+       {
+        for(int j=i;j<=n;j=j*2)
+        {
+            cout<<j<<" ";
+            a[j]=true;
+        }
+       }
+       // baki thakle
+       cout<<endl;
+       
+    }
+}
