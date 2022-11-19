@@ -1,0 +1,29 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+int main()
+
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int arr[n];
+        int i;
+        set<int>ss;
+        for(i=0;i<n;i++)
+        {
+            cin>>arr[i];
+            ss.insert(arr[i]);
+
+        }
+       
+       if((n-ss.size())%2==0)
+       {
+          cout<<ss.size()<<endl;
+       }
+      else  cout<<ss.size()-1<<endl;
+
+    }
+}
