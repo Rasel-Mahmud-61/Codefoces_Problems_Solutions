@@ -1,0 +1,71 @@
+#include<bits/stdc++.h> 
+using namespace std;
+
+int main()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int m,s;
+    cin>>m;
+    cin>>s;
+    vector<int>b(m);
+    for(int i=0;i<m;i++) cin>>b[i];
+
+    // kontaache r konta nai trck rakhar jnne akta vector nibo
+    vector<bool>taken(1111,false);
+    for(int i=0;i<m;i++)
+    {
+        taken[b[i]]=true;
+    }
+     int mx=*max_element(b.begin(),b.end());
+     int current=1;
+     int sum=0;
+     bool ok =false;
+     while(true)
+     {
+        if(taken[current])
+        {
+            // current already ache 
+            current++;
+            continue;
+        }
+        //else 
+        sum+=current;
+        taken[current]=true;
+
+        if(sum==s)
+        {
+            bool imp=false;
+                for(int i=current;i<=mx;i++)
+                {
+                        if(taken[i]==false)
+                        {
+                                // nai 
+                              imp=true;
+                                break;
+                        }
+                        
+                }
+                  if(imp==false) 
+                {
+                    ok=true;
+                   
+                }
+              break;
+        }
+              
+        
+        current++;
+     if(sum>s) break;
+      
+     }
+     
+        
+     if(ok==true) cout<<"YES"<<endl;
+      else cout<<"NO"<<endl;
+
+    }
+}
