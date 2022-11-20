@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+       int t;
+       cin>>t;
+       while(t--)
+       {
+         int n=6;
+         string s;
+         cin>>s;
+         int flag=1;
+         map<char,bool>taken;
+         for(int i=0;i<n;i++)
+         {
+            if(s[i]=='b'||s[i]=='r'||s[i]=='g')
+            {
+                taken[s[i]]=true;
+            }
+            if(s[i]=='B'||s[i]=='G'||s[i]=='R')
+            {
+                s[i]=tolower(s[i]);
+                if(taken[s[i]]==false)
+                {
+                    flag=0;
+                    break;
+                }
+                
+            }
+         }
+         if(flag==0) cout<<"NO"<<endl;
+         else cout<<"YES"<<endl;
+       }
+}
