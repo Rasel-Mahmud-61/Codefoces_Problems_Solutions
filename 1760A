@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int a,b,c;
+        vector<int>v(3);
+        cin>>a;
+        v[0]=a;
+        cin>>b;
+        v[1]=b;
+        cin>>c;
+        v[2]=c;
+        sort(v.begin(),v.end());
+        cout<<v[1]<<endl;
+        
+
+    }
+}
