@@ -1,0 +1,41 @@
+#include<bits/stdc++.h> 
+using namespace std;
+int main()
+
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        //case 1 
+        if(n%2==0)
+        {
+            cout<<"0"<<endl;
+            continue;
+        }
+        //case 2 first digit 
+        int temp=n;
+        while(temp>=10)
+        {
+            temp/=10;
+        }
+        if(temp%2==0)
+        {
+            cout<<"1"<<endl;
+            continue;
+        }
+        //case 3 even ache kina 
+        int even=0;
+        while(n>0)
+        {
+            int rem=n%10;
+            if(rem%2==0) even=1;
+            n/=10;
+        }
+        if(even==1) cout<<"2"<<endl;
+        else cout<<"-1"<<endl;
+
+    }
+}
