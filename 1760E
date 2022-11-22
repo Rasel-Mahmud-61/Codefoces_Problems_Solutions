@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+ll Inverse(int a[],int n)
+{
+    ll one=0,res=0;
+    for(int i=0;i<n;i++) 
+    {
+        if(a[i]==1) 
+        {
+            one++;
+        }
+        else res+=one;
+    }
+    return res;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int a[n];
+       
+        for(int i=0;i<n;i++) cin>>a[i];
+        // no change 
+       ll ans =Inverse(a,n);
+       // first thake o pele 1 kore dibo 
+       int index=-1;
+       for(int i=0;i<n;i++)
+       {
+        if(a[i]==0)
+        {
+            
+            a[i]=1;
+            index=i;
+            break;
+        }
+       }
+       ans=max(ans,Inverse(a,n));
+        // last thake jeta 1 oita 0 kore dibo
+        // first array ta thik kore nibo 
+        if(index!=-1)
+        {
+            a[index]=0;
+        }
+      //  last thke first  1 0 kore dibo
+        for(int i=n-1;i>=0;i--)
+        {
+            if(a[i]==1)
+            {
+                a[i]=0;
+                break;
+            }
+        }
+        ans=max(ans,Inverse(a,n));
+        cout<<ans<<endl;
+
+    }
+}
