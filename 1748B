@@ -1,0 +1,32 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long 
+ int main()
+ {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+         string s;
+         cin>>s;
+         ll ans=0;
+         for(int i=0;i<n;i++)
+         {
+            int dc=0,max1=0;
+           vector<int>mp(11,0);
+            for(int j=i;j<=min(n-1,i+100);j++)
+            {
+                if(mp[s[j]-'0']==0) dc++;
+
+                mp[s[j]-'0']++;
+                max1=max(max1,mp[s[j]-'0']);
+                if(dc>=max1) ans++;
+            }
+            
+            
+         }
+         cout<<ans<<endl;
+    }
+ }
