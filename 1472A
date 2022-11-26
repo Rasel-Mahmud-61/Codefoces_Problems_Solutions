@@ -1,0 +1,38 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        ll w,h;
+        cin>>w>>h;
+        ll n;
+        cin>>n;
+        ll ans=1;
+        if(w%2!=0 && h%2!=0)
+        {
+            if(n==1) cout<<"YES"<<endl;
+            else cout<<"NO"<<endl;
+        }
+        else
+        {
+            while(w%2==0)
+                {
+                    ans*=2;
+                    w/=2;
+                }
+           
+          while(h%2==0)
+                {
+                    ans*=2;
+                   h/=2;
+                }
+                
+            if(ans>=n) cout<<"YES"<<endl;
+            else cout<<"NO"<<endl;
+        }
+    }
+}
