@@ -1,0 +1,36 @@
+#include<bits/stdc++.h> 
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+       int a[n];
+       for(int i=0;i<n;i++) cin>>a[i];
+       int l,r=n-1;
+      
+       int rem,ans=-100000;
+       for(int i=0;i<n;i++)
+       {
+        int ctr=0;
+          l=i;
+            if(a[l]!=a[i+1]) ctr++;
+           // cout<<len<<endl;
+              int max1=r-l-ctr;
+           // cout<<max1<<" ";
+             if(max1>ans)
+             {
+                ans=max1;
+                rem=l;
+                //cout<<l<<endl;
+             }
+            
+           
+       } 
+      //cout<<ans<<endl;
+      cout<<rem+1<<" "<<r+1<<endl;
+    }
+}
