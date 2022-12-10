@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define  ll long long 
+int main()
+{
+     int t;
+     cin>>t;
+     while(t--)
+     {
+         ll l,r,a;
+         cin>>l>>r>>a;
+          // highest reminder  ber korbo 
+          // seta holo r-r%a
+          //hightest rem ar value && last number ar 
+          // moddde jeta max  seta nibo 
+          if(a==1)
+          {
+            cout<<r<<endl;
+            continue;
+          }
+          else
+          {
+            ll x;
+          if((r-(r%a)-1)>=l) x=r-(r%a)-1;
+          else x=r;
+          ll val=x/a+x%a;
+          ll val2=r/a+r%a;
+          cout<<max(val,val2)<<endl;
+          }
+     }
+}
