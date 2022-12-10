@@ -1,0 +1,30 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long
+int coprime(int i,int n)
+{
+    return __gcd(i,n);
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        ll n;
+        cin>>n;
+       n=n-1;
+        // n k duita numbers a divide korbo jate gcd 1 hpu
+        // i ,n-i jate sum=n thake
+        ll mid=n/2;
+        for(ll i=mid;i>=1;i--)
+        {
+           if(coprime(i,n-i)==1) 
+           {
+            cout<<i<<" "<<n-i<<" 1"<<endl;
+            break;
+           }
+        }
+        
+    }
+}
