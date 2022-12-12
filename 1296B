@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int main()
+{
+      int t;
+      cin>>t;
+      while(t--)
+      {
+          ll n;
+          cin>>n;
+          ll ans=0;
+          while(1)
+          {
+           
+           ll d=(n/10)*10;
+            ans+=d;
+            ll rem=n-d;
+            ll bonus=(n/10);
+            n=bonus+rem;
+            if(n<10)
+            {
+                ans+=n;
+                break;
+            }
+
+
+          }
+         
+          cout<<ans<<endl;
+      }
+}
