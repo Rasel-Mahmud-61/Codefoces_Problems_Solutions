@@ -1,0 +1,57 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        ll n;
+        cin>>n;
+        if(n==1)
+        {
+            cout<<"0"<<endl;
+        }
+        else if(n<6)
+        {
+            n=n*2;
+            if(n%6==0)
+            {
+                  cout<<"2"<<endl;
+            }
+            else   cout<<"-1"<<endl;
+        }
+        else
+        {
+            ll flag=1;
+            ll ctr=0;
+            while(n>1)
+            {
+                if(n%6==0)
+                {
+                    n/=6;
+                    ctr++;
+                }
+                
+                else {
+
+                    n=n*2;
+                    ctr++;
+                    if(n%6==0)
+                    {
+                        n/=6;
+                        ctr+=1;
+                    }
+                    else{
+                        flag=0;
+                        break;
+                    }
+                }
+
+            }
+            if(flag==0) cout<<"-1"<<endl;
+          else   cout<<ctr<<endl;
+        }
+    }
+}
