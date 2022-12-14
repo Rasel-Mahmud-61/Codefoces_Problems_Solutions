@@ -1,0 +1,27 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long
+int main()
+{
+     int t;
+     cin>>t;
+     while(t--)
+     {
+         ll n,k;
+         cin>>n>>k;
+         ll rem=0;
+           ll v=n;
+          for(int i=2;i<=n;i++)
+            {
+                if(n%i==0)
+                {
+                 rem=i;
+                 break;
+                }
+            }  
+            k--;
+            v+=rem;
+            v+=(2*k);  
+         cout<<v<<endl;
+     }
+}
