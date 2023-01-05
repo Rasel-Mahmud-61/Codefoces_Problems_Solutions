@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+const ll n=1e6+5,mod=1e9+10;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        ll sum=0;
+        // s[0]=3 hole 3 akta character so ar ascii value 
+        // 51   0 ar ascii value 48 
+        // so jodi number k charcher thake int a ante
+        // chai tahole amake 0 ar ascii minus korte hobe 
+         sum+=s[0]-'0';
+        sum+=s[2]-'0'; 
+        cout<<sum<<endl;
+    }
+}
