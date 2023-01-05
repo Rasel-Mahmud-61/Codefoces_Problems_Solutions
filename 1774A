@@ -1,0 +1,44 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long
+int main()
+{
+     ll t;
+     cin>>t;
+     while(t--)
+     {
+        ll n;
+        cin>>n;
+        string a;
+        cin>>a;
+         ll sum=a[0]-'0';
+         
+        // if(a[0]=='1') sum=1;
+
+         string inp;
+    //   cout<<a[0];
+         for(int i=1;i<n;i++)
+         {
+             if(a[i]=='1')
+             {
+              if(sum==1)
+              {
+                inp+='-';
+                sum--;
+              }
+              else
+             {
+               inp+='+';
+               sum++;
+             }
+             }
+             else
+             {
+               inp+='+';
+
+             }
+    
+         }
+         cout<<inp<<endl;
+     }
+}
