@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std; 
+#define ll long long 
+const ll n=1e6+7;
+
+int main()
+{
+   ll t;
+   cin>>t;
+   while(t--)
+   {
+     ll k;
+     cin>>k;
+     cout<<k-1<<endl;
+   }
+}
