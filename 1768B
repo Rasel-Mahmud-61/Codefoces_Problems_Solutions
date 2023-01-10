@@ -1,0 +1,31 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long 
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,k;
+        cin>>n>>k;
+        vector<int>v(n);
+        for(ll i=0;i<n;i++) cin>>v[i];
+        if(is_sorted(v.begin(),v.end())) 
+        {
+            cout<<"0"<<endl;
+            continue;
+        }
+        ll ordered=0;
+        for(ll i=0;i<n;i++)
+        {
+            if(v[i]==ordered+1)
+            {
+                ordered++;
+            }
+        }
+        ll unordered=n-ordered;
+        ll ans=(unordered+k-1)/k;
+        cout<<ans<<endl;
+    }
+}
