@@ -1,0 +1,63 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long 
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n;
+        cin>>n;
+       ll s,l;
+       ll m[n+10][n+10];
+       s=1;
+       l=n*n;
+       ll c=1;
+       for(ll i=1;i<=n;i++)
+       {
+        if(i%2==1)
+        {
+            for(ll j=1;j<=n;j++)
+            {
+                if(c%2==1)
+                {
+                    m[i][j]=s;
+                    s++;
+                }
+                else{
+                    m[i][j]=l;
+                    l--;
+                }
+                c++;
+            }
+        }
+        else{
+            for(ll j=n;j>=1;j--)
+            {
+                if(c%2==1)
+                {
+                    m[i][j]=s;
+                    s++;
+                }
+                else
+                {
+                    m[i][j]=l;
+                    l--;
+                }
+                c++;
+            }
+            
+        }
+       }
+       //cout<<m[1][1]<<endl;
+       for(ll i=1;i<=n;i++)
+       {
+        for(ll j=1;j<=n;j++)
+        {
+            cout<<m[i][j]<<" ";
+        }
+        cout<<endl;
+       }   
+    }
+}
