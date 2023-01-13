@@ -1,0 +1,62 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long 
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,m,p;
+        cin>>n>>m;
+       vector<ll> a(n+1,0);
+        for(int i=1;i<=n;i++){
+            cin>>a[i];
+        }
+        ll mnPS=LLONG_MAX;
+        vector<ll> pref(n+1,0);
+        for(int i=1;i<=n;i++){
+            pref[i]=pref[i-1]+a[i];
+            mnPS=min(mnPS,pref[i]);
+        }
+        if(mnPS==pref[m]){
+            cout<<0<<endl;
+            continue;
+        }
+ 
+ 
+        int res=0;
+ 
+        mnPS=pref[m];
+ 
+        priority_queue<ll> mxHeap;
+        for(int i=m;i>=1;i--){
+            if(pref[i]<mnPS){
+                while(!mxHeap.empty() and pref[i]<mnPS){
+                    ll x=mxHeap.top();
+                    mxHeap.pop();
+                    mnPS-=(2LL*x);
+                    res++;
+                }
+            }
+            mxHeap.push(a[i]);
+        }
+ 
+        mnPS=pref[m];
+ 
+        priority_queue<ll,vector<ll>,greater<ll>> mnHeap;
+        for(int i=m+1;i<=n;i++){
+            mnHeap.push(a[i]);
+            if(pref[i]<mnPS){
+                while(!mnHeap.empty() and pref[i]<mnPS){
+                    ll x=mnHeap.top();
+                    mnHeap.pop();
+                    mnPS+=(2LL*x);
+                    res++;
+                }
+            }
+        }
+ 
+        cout<<res<<endl;
+    }
+}
