@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int main()
+{
+    ll n,d;
+    cin>>n>>d;
+    ll remain_player=n;
+    ll win=0;
+    vector<ll>a(n);
+    for(int i=0;i<n;i++) cin>>a[i];
+    sort(a.begin(),a.end(),greater<ll>());
+    for(int i=0;i<n;i++)
+    {
+        ll need_player=((d)/a[i])+1;
+            if(remain_player>=need_player)
+            {
+                remain_player-=need_player;
+                win++;
+            }
+            else
+            {
+                break;
+            }
+    }
+    cout<<win<<endl;
+}
