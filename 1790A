@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace  std;
+ int main(){
+    int t;
+   cin>>t;
+    string s;
+    s+="3";
+    s+="1415926535897932384626433832795028";
+   // cout<<s<<endl;
+    while(t--){
+
+    string  inp;
+    cin>>inp;
+     int  ctr=0;
+     for(int i=0;i<s.size();i++){
+        if(s[0]!=inp[0]){
+            break;
+        }
+        else {
+            if(s[i]==inp[i])
+            {
+                ctr++;
+            }
+            else{
+                break;
+            }
+        }
+     }
+            cout<<ctr<<endl;
+    }
+ }
