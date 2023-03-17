@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int main(){
+  ll t;
+  cin>>t;
+  while(t--){
+     ll n;
+     cin>>n;
+     vector<vector<int>>v(n,vector<int> (n-1));
+     vector<int>ans;
+     vector<int>res;
+     for(int i=0;i<n;i++)
+     {
+      for (int j=0;j<n-1;j++){
+
+            cin>>v[i][j];
+            if(j==0){
+              ans.push_back(v[i][j]);
+            }
+
+      }
+     }
+    
+     for(int k=0;k<ans.size();k++){
+        res.push_back(ans[k]);
+     }
+     sort(res.begin(),res.end());
+     int index=0;
+     int preindex;
+     for(int i=0;i<ans.size();i++){
+      if(ans[i]!=res[1])
+      {
+        index=i;
+        
+        break;
+      }
+     }
+
+   //cout<<index<<endl;
+   int x;
+   if(index==0) x=index+1;
+   else x=index-1;
+   cout<<v[x][0]<<" ";
+   for (int i=0;i<v[index].size();i++)
+   {
+    cout<<v[index][i]<<" ";
+   }
+     cout<<endl;
+  }
+
+
+}
