@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,q;
+        cin>>n>>q;
+        int a[n+1];
+        ll sum=0;
+        for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+            sum+=a[i];
+
+        }
+         vector<int>presum(n+1,0);
+         for(int i=0;i<n;i++)
+         {
+            presum[i+1]=presum[i]+a[i];
+         }
+
+        while(q--)
+        {
+            ll l,r,k;
+            cin>>l>>r>>k;
+              if((sum-presum[r]+presum[l-1]+k*(r-l+1))%2==1) cout<<"YES"<<endl;
+            else cout<<"NO"<<endl;
+        }
+    }
+}
