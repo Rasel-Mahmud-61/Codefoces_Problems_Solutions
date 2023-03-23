@@ -1,0 +1,23 @@
+#include<bits/stdc++.h> 
+using namespace  std;
+int main()
+    {
+            int t;
+            cin>>t;
+            while(t--)
+        {
+            string s;
+            cin>>s;
+            int maxQ=0;
+          map<char,int>mp;
+          for(int i=0;i<s.size();i++)
+          {
+            mp[s[i]]++;
+            maxQ=max(maxQ,mp[s[i]]);
+
+          }
+          if(maxQ==4) cout<<"-1"<<endl;
+         else if(maxQ==3) cout<<"6"<<endl;
+          else cout<<"4"<<endl;
+        }
+    }
