@@ -1,0 +1,40 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#define ll long long 
+int main()
+{
+     ll t;
+     cin>>t;
+     while(t--)
+     {
+        ll n;
+        cin>>n;
+        ll ar[n];
+        for(ll i=0;i<n;i++)
+        {
+            cin>>ar[i];
+        }
+        ll ans=0;
+        priority_queue<int>pq;
+        for( ll i=0;i<n;i++)
+        {
+            if(ar[i])
+            {
+                 pq.push(ar[i]);
+
+           
+            }
+            
+            else{
+                  if(pq.size())
+                  {
+                     ans+=pq.top();
+                   pq.pop();
+                  }
+             
+            } 
+        }
+        
+       cout<<ans<<endl;
+     }
+}
