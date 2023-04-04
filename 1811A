@@ -1,0 +1,47 @@
+#include<bits/stdc++.h> 
+using namespace std;
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        string s;
+      char digit;
+      cin >> n >> digit;
+        cin>>s;
+      if(digit=='0')
+      {
+        s=s+digit;
+        cout<<s<<endl;
+        continue;
+      }
+      else{
+            int f=0;
+        for(int i = 0; i < s.length(); i++) {
+        if(s[i] < digit) {
+            s.insert(i, 1, digit);
+            f=1;
+            break;
+        }
+    }
+
+    if(s.length() == 0 ) {
+        s = digit + s;
+        f=1;
+    }
+    if(f==0)
+    {
+        s=s+digit;
+    }
+    cout << s << endl;
+
+      }
+    }
+    return 0;
+}
