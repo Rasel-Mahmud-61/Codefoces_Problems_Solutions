@@ -1,0 +1,34 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+ void solve(){
+    ll n,m;
+    cin>>n>>m;
+    ll x,y,a,b;
+    cin>>x>>y>>a>>b;
+    ll ar;
+       if((x==1 && y==1)||(a==1&&b==1)||(x==n&&y==m)||(a==n&&b==m)||(x==1&&y==m)||(a==1&&b==m)||(x==n&&y==1)||(a==n&&b==1))
+       {
+        ar=2;
+       }
+       else if((x==1)||x==n||a==1||a==n||y==1||y==m||b==1||b==m)
+       {
+        ar=3;
+       }else {
+         ar=4;
+       }
+       ll ans=min(n,m);
+       cout<<min(ans,ar)<<endl;
+ }
+int main()
+{
+
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+}
+
